@@ -1,8 +1,9 @@
+
 # MC-DQN-SnakeGame
 
 
 
-Uploading 화면 기록 2024-07-07 오후 11.01.35-1.mov…
+https://github.com/frozenPeng/MC-DQN-SnakeGame/assets/92510997/a33684c4-982e-4c50-829a-359a5d307820
 
 
 
