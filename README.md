@@ -1,5 +1,9 @@
 # MC-DQN-SnakeGame
 
-https://github.com/frozenPeng/MC-DQN-Snake-Game-/assets/92510997/82195efc-89cb-4e07-86f6-828e152b1244
+
+
+Uploading 화면 기록 2024-07-07 오후 11.01.35-1.mov…
+
+
 
 ~~Chat-GPT는 신이야~~
