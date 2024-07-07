@@ -1,0 +1,47 @@
+name: MC-DQN-SnakeGame3
+version: '${project.version}'
+main: org.frozenpeng.mcdqnsnakegame.Main
+api-version: '1.21'
+description: A Snake game plugin with DQN AI for Minecraft
+author: FrozenPeng
+commands:
+  snakegame:
+    description: Start a new Snake game
+    usage: /<command> [ai]
+    permission: mcsnakegame.play
+  trainsnake:
+    description: Train the Snake AI for a specified number of episodes
+    usage: /<command> [episodes]
+    permission: mcsnakegame.train
+  savemodel:
+    description: Save the trained Snake AI model
+    usage: /<command>
+    permission: mcsnakegame.save
+  loadmodel:
+    description: Load a saved Snake AI model
+    usage: /<command>
+    permission: mcsnakegame.load
+  getepsilon:
+    description: Get the current epsilon value of the AI
+    usage: /<command>
+    permission: mcsnakegame.epsilon
+  setepsilon:
+    description: Set a new epsilon value for the AI
+    usage: /<command> <value>
+    permission: mcsnakegame.epsilon
+permissions:
+  mcsnakegame.play:
+    description: Allows players to start and play the Snake game
+    default: true
+  mcsnakegame.train:
+    description: Allows players to train the Snake AI
+    default: op
+  mcsnakegame.save:
+    description: Allows players to save the trained Snake AI model
+    default: op
+  mcsnakegame.load:
+    description: Allows players to load a saved Snake AI model
+    default: op
+  mcsnakegame.epsilon:
+    description: Allows players to get and set the epsilon value of the AI
+    default: op
