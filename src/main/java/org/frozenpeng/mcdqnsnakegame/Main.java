@@ -26,7 +26,7 @@ public class Main extends JavaPlugin implements Listener {
 
     private static final int BOARD_WIDTH = 13;
     private static final int BOARD_HEIGHT = 13;
-    private static final int TICK_INTERVAL = 2;
+    private static final int TICK_INTERVAL = 5;
 
     private List<Location> snakeBody;
     private List<Location> snakePositions;
@@ -64,17 +64,12 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("snakegame")) {
-            if (args.length > 0 && args[0].equalsIgnoreCase("ai")) {
-                startSnakeGame(null);
-                sender.sendMessage("Started Snake game in AI training mode.");
+            Player player = Bukkit.getOnlinePlayers().isEmpty() ? null : Bukkit.getOnlinePlayers().iterator().next();
+            if (player != null) {
+                startSnakeGame(player);
+                sender.sendMessage("Started Snake game for player: " + player.getName());
             } else {
-                Player player = Bukkit.getOnlinePlayers().isEmpty() ? null : Bukkit.getOnlinePlayers().iterator().next();
-                if (player != null) {
-                    startSnakeGame(player);
-                    sender.sendMessage("Started Snake game for player: " + player.getName());
-                } else {
-                    sender.sendMessage("No players online to start the Snake game.");
-                }
+                sender.sendMessage("No players online to start the Snake game.");
             }
             return true;
         } else if (command.getName().equalsIgnoreCase("trainsnake")) {
@@ -151,7 +146,6 @@ public class Main extends JavaPlugin implements Listener {
                         if (dqnAgent == null) {
                             Bukkit.getLogger().severe("DQN Agent is not initialized!");
                             cancel();
-                            return;
                         }
                     } else if (player != null) {
                         currentDirection = getDirectionFromPlayer(player);

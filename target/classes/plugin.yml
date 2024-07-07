@@ -7,7 +7,7 @@ author: FrozenPeng
 commands:
   snakegame:
     description: Start a new Snake game
-    usage: /<command> [ai]
+    usage: /<command>
     permission: mcsnakegame.play
   trainsnake:
     description: Train the Snake AI for a specified number of episodes
